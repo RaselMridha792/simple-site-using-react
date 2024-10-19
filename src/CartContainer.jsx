@@ -1,40 +1,23 @@
-export default function CartContainer() {
+export default function CartContainer({ detail, handleModalBox }) {
+  console.log(detail);
+  const { idCategory, strCategory, strCategoryThumb, strCategoryDescription } =
+    detail;
+
   return (
     <>
-      <div className="my-40 max-w-screen-2xl mx-auto">
-        <h1 className="text-center text-4xl font-bold uppercase">
-          Your Favourite Food
-        </h1>
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
-          <div className="card card-side bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                alt="Movie"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">New movie is released!</h2>
-              <p>Click the button to watch on Jetflix app.</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Watch</button>
-              </div>
-            </div>
-          </div>
-          <div className="card card-side bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                alt="Movie"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">New movie is released!</h2>
-              <p>Click the button to watch on Jetflix app.</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Watch</button>
-              </div>
-            </div>
+      <div className="card lg:card-side bg-base-100 shadow-xl w-auto">
+        <figure className="w-full">
+          <img className="" src={strCategoryThumb} alt="Album" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{strCategory}</h2>
+          <p>{strCategoryDescription.slice(0, 100)}</p>
+          <div className="card-actions justify-start">
+            <button
+              onClick={() => handleModalBox(detail)}
+              className="link text-yellow-500">
+              View details...
+            </button>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ export default function BodyContent() {
               <input
                 type="text"
                 placeholder="search your food"
-                className="input input-bordered join-item"
+                className="input input-bordered join-item w-full"
               />
               <button className="btn btn-warning join-item">Search</button>
             </div>
